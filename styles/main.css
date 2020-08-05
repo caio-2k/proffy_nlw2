@@ -1,0 +1,65 @@
+/* Elementos raíz do css (variáveis) que poderei re-utilizar depois */
+/* Nesse caso, apenas cores. */
+:root {
+  --color-background: #F0F0F7;
+  --color-primary-lighter: #9871F5;
+  --color-primary-light: #916BEA;
+  --color-primary: #8257E5;
+  --color-primary-dark: #774DD6;
+  --color-primary-darker: #6842c2;
+  --color-secondary: #04D361;
+  --color-secondary-dark: #04BF58;
+  --color-title-in-primary: #FFFFFF;
+  --color-text-in-primary: #D4C2FF;
+  --color-text-title: #32264D;
+  --color-text-complement: #9C98A6;
+  --color-text-base: #6A6180;
+  --color-line-in-white: #E6E6F0;
+  --color-input-background: #F8F8FC;
+  --color-button-text: #FFFFFF;
+  --color-box-base: #FFFFFF;
+  --color-box-footer: #FAFAFC;
+  --color-small-info: #C1BCCC;
+  font-size: 100%; /* controle das medidas rem */
+  /* 100% é o tamanho padrão da fonte (16px e 1rem) */
+  /* rem é relativo a fonte que foi setada aqui no root, dependendo do que foi colocado aqui. */
+}
+
+body{
+  background-color: var(--color-background);
+  display: flex; /*todos os elementos da caixa body devem ser flex, ou seja
+  muda o comportamento padrao do html (display block) para um ao lado do outro*/
+  align-items: center;
+  justify-content: center;
+}
+
+body, input, button, textarea{
+  font: 500 1.6rem Poppins; /* font-weight, font-size, font-family */
+  color: var(--color-text-base);
+}
+
+html, body{
+  height: 100vh;
+}
+
+* { /* Limpando margin e padding do html que estão por padrão no browser */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* alterar medidas pela borda */
+}
+
+#container {
+  /* box model */
+  /* padding: 10px 40px 60px 2px; up down left right respec */
+  /* margin: 40px 10px; 40 up down, 10 left right */
+  width: 90vw; /* Quebra em 100 pedaços mas ocupa apenas 90 */
+  max-width: 700px; /* Basicamente está rolando a adptação da caixa a tela até 700px /*
+  border: 1px solid red; */
+}
+
+/* Acima de 700px faça */
+@media (min-width: 700px){
+  :root{
+    font-size: 62.5%; /* todo 1rem vai ser relativo a 10px */
+  }
+}
